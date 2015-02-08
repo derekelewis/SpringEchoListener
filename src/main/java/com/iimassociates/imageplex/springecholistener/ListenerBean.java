@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class ListenerBean extends DeviceService {
 
     public ListenerBean() {
-        Device device = new Device("dcm4chee-arc");
+        Device device = new Device("echoscp");
         DicomServiceRegistry serviceRegistry = new DicomServiceRegistry();
         serviceRegistry.addDicomService(new BasicCEchoSCP());
         device.setDimseRQHandler(serviceRegistry);
