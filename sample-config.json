@@ -1,0 +1,39 @@
+{
+	"dicomConfigurationRoot": {
+		"dicomUniqueAETitlesRegistryRoot": {
+			"ECHOSCP": {
+				"dicomAETitle": "ECHOSCP"
+			},
+			"STORESCU": {
+				"dicomAETitle": "STORESCU"
+			}
+		},
+		"dicomDevicesRoot": {
+			"echoscp": {
+				"dicomInstalled": true,
+				"dcmLimitOpenAssociations": 0,
+				"dicomDeviceName": "echoscp",
+				"dicomNetworkAE": {
+					"ECHOSCP": {
+						"dicomAETitle": "ECHOSCP",
+						"dicomNetworkConnectionReference" : [ "/dicomConfigurationRoot/dicomDevicesRoot/*[dicomDeviceName='echoscp']/dicomConnection[cn='dicom']" ],
+						"dicomAssociationInitiator": false,
+						"dicomAssociationAcceptor": true,
+						"dcmTransferCapability": [ {
+							"dicomTransferSyntax": [ "1.2.840.10008.1.2" ],
+							"dicomSOPClass": "1.2.840.10008.1.1",
+							"cn" : "Verification SOP Class SCP",
+							"dicomTransferRole" : "SCP",
+							"dcmQueryOptions" : [ ]
+						} ]
+					}
+				},
+				"dicomConnection": [ {
+					"cn": "dicom",
+					"dicomHostname": "localhost",
+					"dicomPort": "7000"
+				} ]
+			}
+		}
+	}
+}
